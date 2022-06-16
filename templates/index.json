@@ -1,0 +1,11 @@
+{
+  "name": "Index",
+  "sections": {
+    "main": {
+      "type": "main-slideshow"
+    }
+  },
+  "order": [
+    "main"
+  ]
+}

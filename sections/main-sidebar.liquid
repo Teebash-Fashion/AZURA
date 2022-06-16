@@ -1,0 +1,16 @@
+{{ 'azura_sidebar.css' | asset_url | stylesheet_tag: preload: true }}
+<link rel="preload" href="{{ 'azura_sidebar.js' | asset_url }}" as="script">
+
+<nav class="azura-{{ section.id }}">
+  <header>
+    header
+  <header>
+  <ul>
+    <li>test</li>
+  </ul>
+  <footer>
+    footer
+  </footer>
+</nav>
+
+<script src="{{ 'azura_sidebar.js' | asset_url }}" defer></script>

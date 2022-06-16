@@ -1,0 +1,48 @@
+{
+  "name": "azura",
+  "version": "0.0.1",
+  "description": "This is Azura",
+  "main": "index.js",
+  "scripts": {
+    "dev": "concurrently \"npm run dev:js\" \"npm run dev:css\"",
+    "dev:js": "cross-env NODE_ENV=development webpack --config .src/config/webpack.dev.js --watch",
+    "dev:css": "sass .src/scss:assets --embed-source-map --watch",
+    "dev:analyze": "cross-env NODE_ENV=development webpack --config .src/config/webpack.dev.js --analyze",
+    "build": "npm run build:js && npm run build:css",
+    "build:js": "cross-env NODE_ENV=production webpack --config .src/config/webpack.prod.js",
+    "build:css": "sass -s compressed .src/scss:assets --no-source-map",
+    "build:analyze": "cross-env NODE_ENV=production webpack --config .src/config/webpack.prod.js --analyze",
+    "lint": "npm run lint:js && npm run lint:css",
+    "lint:js": "eslint .src/js/**/*.js --config .src/config/.eslintrc.js --fix",
+    "lint:css": "stylelint .src/scss/**/* --config .src/config/.stylelintrc.json --fix",
+    "prepare": "husky install"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Teebash-Fashion/AZURA.git"
+  },
+  "keywords": [],
+  "author": "AZURA",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Teebash-Fashion/AZURA/issues"
+  },
+  "homepage": "https://github.com/Teebash-Fashion/AZURA#readme",
+  "devDependencies": {
+    "concurrently": "7.2.2",
+    "cross-env": "7.0.3",
+    "eslint": "^8.17.0",
+    "eslint-config-standard": "^17.0.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-n": "^15.2.2",
+    "eslint-plugin-promise": "^6.0.0",
+    "husky": "8.0.1",
+    "sass": "1.52.3",
+    "stylelint": "14.9.1",
+    "stylelint-config-sass-guidelines": "9.0.1",
+    "terser-webpack-plugin": "5.3.3",
+    "webpack": "5.73.0",
+    "webpack-bundle-analyzer": "^4.5.0",
+    "webpack-cli": "^4.10.0"
+  }
+}
